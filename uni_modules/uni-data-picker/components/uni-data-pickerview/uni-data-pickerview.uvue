@@ -5,7 +5,7 @@
     </view>
     <scroll-view v-if="!isCloudDataList" :scroll-x="true">
       <view class="selected-node-list">
-        <template v-for="(item, index) in selectedNodes">
+        <template v-for="(item, index) in selectedNodes" :key="index">
           <text class="selected-node-item" :class="{'selected-node-item-active':index==selectedIndex}"
             @click="onTabSelect(index)">
             {{item[mappingTextName]}}
@@ -14,7 +14,7 @@
       </view>
     </scroll-view>
     <list-view class="list-view" :scroll-y="true">
-      <list-item class="list-item" v-for="(item, _) in currentDataList" @click="onNodeClick(item)">
+      <list-item class="list-item" v-for="(item, index) in currentDataList" @click="onNodeClick(item)" :key="index">
         <text class="item-text" :class="{'item-text-disabled': item['disable']}">{{item[mappingTextName]}}</text>
         <text class="check" v-if="item[mappingValueName] == selectedNodes[selectedIndex][mappingValueName]"></text>
       </list-item>

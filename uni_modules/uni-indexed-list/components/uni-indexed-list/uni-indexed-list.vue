@@ -148,7 +148,8 @@
 					let items = value.data.map(item => {
 						let obj = {}
 						obj['key'] = value.letter
-						obj['name'] = item
+						//为了兼容以前的写法，我又写了下面这种赋值方式
+						obj['name'] = item.name?item.name:item;
 						obj['itemIndex'] = index
 						index++
 						obj.checked = item.checked ? item.checked : false
