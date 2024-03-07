@@ -2,7 +2,7 @@
 	<view>
 		<view class="uni-container">
 			<uni-table ref="table" :loading="loading" border stripe type="selection" emptyText="暂无更多数据" @selection-change="selectionChange">
-				<uni-tr>
+				<uni-tr :fix="true">
 					<uni-th width="150" align="center">日期</uni-th>
 					<uni-th width="150" align="center">姓名</uni-th>
 					<uni-th align="center">地址</uni-th>
@@ -35,7 +35,7 @@ export default {
 			searchVal: '',
 			tableData: [],
 			// 每页数据量
-			pageSize: 10,
+			pageSize: 30,
 			// 当前页
 			pageCurrent: 1,
 			// 数据总量

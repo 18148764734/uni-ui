@@ -10,7 +10,7 @@
 		<slot></slot>
 	</view>
 	<!-- #endif -->
-	
+
 </template>
 
 <script>
@@ -71,7 +71,7 @@
 </script>
 
 <style lang="scss">
-	$border-color:#EBEEF5;
+	$border-color:#b5b8c2;
 
 	.uni-table-td {
 		display: table-cell;

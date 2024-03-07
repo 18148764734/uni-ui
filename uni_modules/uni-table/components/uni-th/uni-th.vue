@@ -216,7 +216,8 @@ $uni-primary: #007aff !default;
 	/* #endif */
 	font-size: 14px;
 	font-weight: bold;
-	color: #909399;
+	color: #171718;
+	background-color: #b8bbc5;
 	border-bottom: 1px $border-color solid;
 }
 
@@ -224,7 +225,7 @@ $uni-primary: #007aff !default;
 	/* #ifndef APP-NVUE */
 	display: flex;
 	/* #endif */
-	flex-direction: row;
+	// flex-direction: row;
 }
 
 .table--border {
