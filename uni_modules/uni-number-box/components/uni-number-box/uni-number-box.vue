@@ -24,6 +24,7 @@
 	 * @property {String} background 背景色
 	 * @property {String} color 字体颜色（前景色）
 	 * @property {Number} width 输入框宽度(单位:px)
+	 * @property {String} size 大小 = ["mini"|"large"|"default"]
 	 * @property {Boolean} disabled = [true|false] 是否为禁用状态
 	 * @event {Function} change 输入框值改变时触发的事件，参数为输入框当前的 value
 	 * @event {Function} focus 输入框聚焦时触发的事件，参数为 event 对象
@@ -46,6 +47,10 @@
 				type: Number,
 				default: 0
 			},
+			size: {
+				type: String,
+				default: 'default'
+			}
 			max: {
 				type: Number,
 				default: 100
@@ -169,8 +174,9 @@
 <style lang="scss">
 	$box-height: 26px;
 	$bg: #f5f5f5;
-	$br: 2px;
+	$br: 5px;
 	$color: #333;
+	$border-color: #a6a7ab;
 
 	.uni-numbox {
 		/* #ifndef APP-NVUE */
@@ -188,18 +194,19 @@
 		justify-content: center;
 		padding: 0 8px;
 		background-color: $bg;
+		border: $border-color 0.5px solid;
 		/* #ifdef H5 */
 		cursor: pointer;
 		/* #endif */
 	}
 
 	.uni-numbox__value {
-		margin: 0 2px;
 		background-color: $bg;
 		width: 40px;
 		height: $box-height;
 		text-align: center;
 		font-size: 14px;
+		border: $border-color 0.5px solid;
 		border-left-width: 0;
 		border-right-width: 0;
 		color: $color;
@@ -218,9 +225,9 @@
 	.uni-numbox--text {
 		// fix nvue
 		line-height: 20px;
-		margin-bottom: 2px;
 		font-size: 20px;
 		font-weight: 300;
+		margin-bottom: 2px;
 		color: $color;
 	}
 
